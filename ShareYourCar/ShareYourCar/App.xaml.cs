@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
 
 namespace ShareYourCar
 {
@@ -13,7 +10,8 @@ namespace ShareYourCar
         {
             InitializeComponent();
 
-            MainPage = new ShareYourCar.MainPage();
+            MainPage = new NavigationPage(new ShareYourCar.MainPage());
+            MainPage.On<Windows>().SetToolbarPlacement(ToolbarPlacement.Bottom);
         }
 
         protected override void OnStart()

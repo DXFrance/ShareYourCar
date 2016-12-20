@@ -15,7 +15,8 @@ namespace ShareYourCar
 
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         {
-            return ((Trip)item).Vehicule == VehiculeType.Bike ? BikeTemplate : CarTemplate;
+            if (item == null) return null;
+            return ((Ride)item).Vehicule == VehiculeType.Bike ? BikeTemplate : CarTemplate;
         }
     }
 }
